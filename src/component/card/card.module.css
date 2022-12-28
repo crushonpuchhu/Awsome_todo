@@ -122,13 +122,7 @@
     display: none;
 }
 
-.info {
 
-    box-sizing: border-box;
-    border-top: 1px solid #333552;
-    height: 10%;
-    width: 100%;
-}
 
 .list {
     box-sizing: border-box;
@@ -147,7 +141,7 @@
     justify-content: space-between;
     height: 7vh;
     min-height: 7vh;
-    border-bottom: 1px solid #a0a0a9;
+    border-bottom: 1px solid #b5b1b1;
 }
 
 .dar {
@@ -156,8 +150,17 @@
     font-size: 14px;
     box-sizing: border-box;
     padding: 5px;
+    max-height:4vh ;
+    overflow:scroll;
 }
-
+.dar::-webkit-scrollbar
+{
+   display: none;
+}
+.lig::-webkit-scrollbar
+{
+   display: none;
+}
 .lig {
     color: rgb(83, 84, 84);
     width: 85%;
@@ -165,6 +168,7 @@
     font-size: 14px;
     box-sizing: border-box;
     padding: 5px;
+    overflow: scroll;
 }
 
 .list img {
@@ -278,4 +282,75 @@
     position: relative;
     border-radius: 50%;
     box-sizing: border-box;
+}
+
+.info{
+    
+
+        box-sizing: border-box;
+        border-top: 1px solid #333552;
+        height: 10%;
+        width: 100%;
+       display: flex;
+       align-items: center;
+       justify-content: space-evenly;
+}
+.info2{
+    
+
+    box-sizing: border-box;
+    border-top: 1px solid #b5b1b1;
+    height: 10%;
+    width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+}
+.info ul,.info2 ul
+{
+   
+    display: flex;
+    list-style: none;
+    width: 15vw;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.info ul li,.info2 ul li
+{
+     font-size:13.5px ;
+    font-weight: 500;
+    cursor: pointer;
+}
+.info ul li:nth-of-type(1),.info2 ul li:nth-of-type(1)
+{
+    color: var(--skyb);
+}
+.info ul li:nth-of-type(2),.info2 ul li:nth-of-type(2)
+{
+    color: white
+}
+.info ul li:nth-of-type(3),.info2 ul li:nth-of-type(3)
+{
+    color:#7b7d97;
+}
+.info p:nth-of-type(1),.info2 p:nth-of-type(1)
+{
+    color:#535781;
+    font-size: 12px;
+    
+}
+.info p:nth-of-type(2),.info2 p:nth-of-type(2)
+{  cursor: pointer;
+    color: rgb(222, 222, 222);
+    font-size: 13px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader
+{
+  
+    height: 18px;
+    margin-left: 5px
 }
