@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import st from './card.module.css'
 import cross from './icon-cross.svg'
 
-
 const List = ({ content, val1, data, sub, ar }) => {
 
   const [show, setshow] = useState(false);
@@ -34,8 +33,6 @@ const List = ({ content, val1, data, sub, ar }) => {
 
 const Card = ({ val }) => {
   const url1 = "https://media.tenor.com/wpSo-8CrXqUAAAAj/loading-loading-forever.gif";
-
-
   const [change, setchange] = useState("");
   const [submit, setsubmit] = useState([]);
   const [switc, setswitch] = useState(true);
@@ -47,8 +44,8 @@ const Card = ({ val }) => {
       setchange("");
     }
   }
-
-
+   
+  
 
 
 
@@ -72,22 +69,28 @@ const Card = ({ val }) => {
           </div>
 
           <div className={val ? st.down : st.down1}>
-            <div className={st.vao}>
+            <div  className={st.vao}>
+           
 
               {
-                submit.map((e, i, arr) => {
-                  console.log(arr);
+                 submit.map((e, i, arr) => {
+               
                   return (
-                    <List key={i} ar={arr} sub={setsubmit} data={i} val1={val} content={e} />
+                   <List key={i} ar={arr} sub={setsubmit} data={i} val1={val} content={e} />
                   )
                 })
+                
               }
+              {
+                submit.length===0?<h5 className={st.stat} style={{color:val?"rgb(222, 222, 222)":"rgb(46, 45, 45)",opacity:"0.7"}}>Add Somthing</h5>:null
+              }
+              
             </div>
             <div className={val ? st.info : st.info2}>
               <p>{submit.length} left</p>
 
               <ul>
-                <li>All</li>
+                <li >All</li>
                 <li style={{ color: val ? null : "black" }}>Active</li>
                 <li>Completed</li>
               </ul>
@@ -101,6 +104,7 @@ const Card = ({ val }) => {
                   }, 600)
                   setTimeout(() => {
                     setre(pp => !pp)
+                    setswitch(p => !p);
                   }, 2000)
                 }
                 else { }
